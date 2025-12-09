@@ -1,7 +1,7 @@
 # src/train.py
 
-from src.data_loader import load_and_save_iris_dataset
-from src.model import build_model, save_model
+from irismodelproject.src.irismodelproject.pipelines.data_loader import load_and_save_iris_dataset
+from irismodelproject.src.irismodelproject.pipelines.model import build_model, save_model
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
