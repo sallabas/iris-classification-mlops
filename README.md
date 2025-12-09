@@ -17,6 +17,7 @@ The goal of **Sprint 2** was to set up a machine-learning pipeline for Iris flow
 **Tools & Libraries:** Python 3.12 | scikit-learn | pandas | DVC | Joblib | Jupyter  
 
 ### Directory Structure
+```bash
 iris-classification-mlops/
 ├── irismodelproject/
 │   ├── conf/
@@ -45,7 +46,7 @@ iris-classification-mlops/
 │       └── train_model.ipynb
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 ## Sprint 1 Outcome  
