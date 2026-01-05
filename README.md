@@ -10,6 +10,11 @@ The goal of **Sprint 1** was to set up the foundational structure of the *Iris F
 ## Objective 
 The goal of **Sprint 2** was to set up a machine-learning pipeline for Iris flower classification built using Kedro, FastAPI, and scikit-learn by following modern MLOps practice. 
 
+# Sprint 3 - AutoML, Hyperparameter Optimaztioan & Experiment Tracking
+
+## Objective 
+The goal of **Sprint 3** was to enhance the existing ml pipeline by introducing **automated model selection, hyperparameter optimization, and experiment tracking** following advanced MLOps practices.
+
 ---
 
 ## Project Setup  
@@ -32,6 +37,8 @@ iris-classification-mlops/
 │   │   └── 07_model_output/
 │   ├── models/
 │   │   └── model.joblib
+│   │   └── optuna_experiment.ipynb
+│   │   └── pycaret_experiment.ipynb
 │   ├── src/
 │   │   └── irismodelproject/
 │   │       ├── pipelines/
@@ -66,13 +73,27 @@ iris-classification-mlops/
 - Integrated the trained model with FastAPI, enabling real-time predictions
 - Exposed API documentation through Swagger UI at // http://127.0.0.1:8000/docs //
 
+  ## Sprint 3 Outcome
+- Implemented **AutoML** workflow with **PyCaret**, enabling automatic comparison of multiple classification models
+- Performed hyperparameter optimization using **Optuna** on the selected model (RandomForestClassifier)
+- Identified the best-performing model based on validation metrics
+- Persisted optimized models:
+  - pycaret_best_model.pkl
+  - optuna_best_model.pkl
+- Integrated the optimized model into the FastAPI /predict endpoint
+- Enabled real-time inference through **Swagger UI**
+- Verified correct model inference via API requests
+- Established experiment tracking foundation with **Weights & Biases** for future training runs
+- Best model confidence: ~0.96
+
+
 ---
 
 
-## Next Steps (Sprint 3 Preview)  
-- PyCaret
-- Optuna
-- Wandb
+## Next Steps (Sprint 4 Preview)  
+- Configuration
+- Docker
+- Ansible
 
 ---
 
