@@ -1,12 +1,17 @@
 from fastapi import FastAPI
-import joblib
-import numpy as np
 from pydantic import BaseModel
-
-# Modeli yükle
-model = joblib.load("irismodelproject/data/06_models/model.pkl")
+import joblib
+import pandas as pd
 
 app = FastAPI(title="Iris Classification API")
+
+# Optuna
+# model = joblib.load("irismodelproject/models/optuna_best_model.pkl")
+
+# Pycaret
+model = joblib.load("irismodelproject/models/pycaret_best_model.pkl")
+
+
 
 class IrisInput(BaseModel):
     sepal_length: float
@@ -14,8 +19,25 @@ class IrisInput(BaseModel):
     petal_length: float
     petal_width: float
 
+
 @app.post("/predict")
 def predict(data: IrisInput):
-    arr = np.array([[data.sepal_length, data.sepal_width, data.petal_length, data.petal_width]])
-    prediction = model.predict(arr)[0]
-    return {"prediction": int(prediction)}
+    df = pd.DataFrame([{
+        "sepal_length": data.sepal_length,
+        "sepal_width": data.sepal_width,
+        "petal_length": data.petal_length,
+        "petal_width": data.petal_width,
+    }])
+
+    prediction = model.predict(df)[0]
+    confidence = model.predict_proba(df).max()
+
+#    return {
+#        "prediction": int(prediction),
+#        "confidence": float(confidence)
+#    }
+
+    return {
+        "prediction": prediction,
+        "confidence": float(confidence)
+    }
