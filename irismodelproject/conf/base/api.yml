@@ -1,0 +1,8 @@
+app:
+  title: Iris Classification API
+  docs_url: /docs
+  openapi_url: /openapi.json
+
+model:
+  type: optuna
+  path: irismodelproject/models/optuna_best_model.pkl

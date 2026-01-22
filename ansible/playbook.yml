@@ -1,0 +1,16 @@
+- name: Ansible SSH test and basic setup
+  hosts: all
+  become: true
+  tasks:
+
+    - name: Ping test (Ansible connectivity)
+      ansible.builtin.ping:
+
+    - name: Show hostname
+      ansible.builtin.command: hostname
+
+    - name: Ensure curl is installed
+      ansible.builtin.apt:
+        name: curl
+        state: present
+        update_cache: yes

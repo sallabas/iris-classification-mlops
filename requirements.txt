@@ -1,7 +1,12 @@
+ipython>=8.10
+jupyterlab>=3.0
+notebook
+kedro~=1.1.1
+
+fastapi
+uvicorn
+
 pandas
-numpy
 scikit-learn
-matplotlib
 joblib
-dvc
-jupyter
+pyyaml
