@@ -15,6 +15,11 @@ The goal of **Sprint 2** was to set up a machine-learning pipeline for Iris flow
 ## Objective 
 The goal of **Sprint 3** was to enhance the existing ml pipeline by introducing **automated model selection, hyperparameter optimization, and experiment tracking** following advanced MLOps practices.
 
+# Sprint 4 - Containerization & Automated Deploytment (Docker & Ansible)
+
+## Objective 
+The goal of **Sprint** 4 was to productionize deployment by containerizing the FastAPI application with Docker and automating the full deployment process using Ansible on a Linux (Ubuntu) environment.
+
 ---
 
 ## Project Setup  
@@ -30,6 +35,10 @@ iris-classification-mlops/
 │   │       ├── catalog.yml
 │   │       ├── parameters.yml
 │   │       └── parameters_iris_pipeline.yml
+|   ├── ansible/
+│   |       ├── ansible.cfg
+│   |       ├── inventory.yml
+│   |       └── playbook.yml
 │   ├── data/
 │   │   ├── 01_raw/
 │   │   ├── 02_intermediate/
@@ -51,6 +60,7 @@ iris-classification-mlops/
 │   │           └── main.py  (FastAPI app)
 │   └── notebooks/
 │       └── train_model.ipynb
+├── Dockerfile
 ├── requirements.txt
 └── README.md
 ```
@@ -86,6 +96,48 @@ iris-classification-mlops/
 - Established experiment tracking foundation with **Weights & Biases** for future training runs
 - Best model confidence: ~0.96
 
+  ## Sprint 3 Outcome
+Docker
+- Created a Dockerfile at the project root to containerize the FastAPI application
+- Application runs using Uvicorn inside Docker container
+- API exposed on port 8000
+- Docker image builds directly from the project source code
+Ansible
+- Indroduced an Ansible-based deployment automation workflow
+- Ansible playbook performs the following steps:
+  - Verifies Ansible connectivity
+  - Installs required system packages
+  - Installs and enables Docker
+  - Adds deployment user to docker group
+  - Builds Docker image from the project Dockerfile
+  - Removes any existing container
+  - Runs a fresh container with proper port mapping
+
+Running the project with Ansible (Sprint 4)
+Prerequisites 
+- Ubuntu-based system (VM or server)
+- Ansible installed on the control node
+- Docker not required to pre-installed (handled by Ansible)
+**Step1 - clone the repository on the target machine**
+```bash
+git clone https://github.com/sallabas/iris-classification-mlops
+cd iris-classification-mlops/ansible
+```
+
+**Step 2 - Run the Ansible Playbook**
+```bash
+ansible-playbook playbook.yml
+```
+
+**Step 3 - Verify Deployment**
+```bash
+docker ps
+```
+**Step 4 - Access the API**
+- Swagger UI: (Example (local VM))
+```bash
+http://192.168.172.131:8000/docs
+```
 
 ---
 
