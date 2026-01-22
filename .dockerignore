@@ -1,0 +1,22 @@
+# Virtual environments
+venv*
+.env
+
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+
+# Notebooks & experiments
+notebooks
+irismodelproject/notebooks
+wandb
+
+# Python cache
+__pycache__
+*.pyc
+
+# Logs
+*.log

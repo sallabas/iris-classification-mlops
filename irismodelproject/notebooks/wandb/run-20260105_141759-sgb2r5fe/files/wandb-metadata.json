@@ -1,0 +1,27 @@
+{
+  "os":  "Windows-10-10.0.26100-SP0",
+  "python":  "CPython 3.11.9",
+  "startedAt":  "2026-01-05T13:17:59.288712Z",
+  "program":  "irismodelproject/notebooks/optuna_experiment.ipynb",
+  "codePath":  "irismodelproject/notebooks/optuna_experiment.ipynb",
+  "git":  {
+    "remote":  "https://github.com/sallabas/iris-classification-mlops.git",
+    "commit":  "ff41bebec3c2bb6230e42d87e12b6abfe1b4f46d"
+  },
+  "email":  "yigit.sallabas31@gmail.com",
+  "root":  "C:\\Users\\kysal\\PycharmProjects\\iris-classification-mlops\\irismodelproject\\notebooks",
+  "host":  "Sallabas",
+  "executable":  "C:\\Users\\kysal\\PycharmProjects\\iris-classification-mlops\\venv-sprint3\\Scripts\\python.exe",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "disk":  {
+    "/":  {
+      "total":  "1023401783296",
+      "used":  "778328166400"
+    }
+  },
+  "memory":  {
+    "total":  "17101778944"
+  },
+  "writerId":  "cw5u7xm5x7x82o92uibek6o34nr2ut2k"
+}
