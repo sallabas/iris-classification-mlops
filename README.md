@@ -96,7 +96,7 @@ iris-classification-mlops/
 - Established experiment tracking foundation with **Weights & Biases** for future training runs
 - Best model confidence: ~0.96
 
-  ## Sprint 3 Outcome
+  ## Sprint 4 Outcome
 Docker
 - Created a Dockerfile at the project root to containerize the FastAPI application
 - Application runs using Uvicorn inside Docker container
