@@ -18,10 +18,10 @@ def train_model():
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
-    print(f"🎯 Model accuracy: {acc:.2f}")
+    print(f"Model accuracy: {acc:.2f}")
 
     save_model(model)
-    print("🏁 Training complete.")
+    print("Training complete.")
 
 
 if __name__ == "__main__":

@@ -14,7 +14,7 @@ def save_model(model, path="../models/model.joblib"):
     """Save the trained model to disk."""
     os.makedirs(os.path.dirname(path), exist_ok=True)
     joblib.dump(model, path)
-    print(f"✅ Model saved at: {path}")
+    print(f"Model saved at: {path}")
 
 
 def load_model(path="../models/model.joblib"):
@@ -22,5 +22,5 @@ def load_model(path="../models/model.joblib"):
     if not os.path.exists(path):
         raise FileNotFoundError(f"Model not found at {path}")
     model = joblib.load(path)
-    print(f"✅ Model loaded from: {path}")
+    print(f"Model loaded from: {path}")
     return model

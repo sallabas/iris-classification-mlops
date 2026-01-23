@@ -9,19 +9,37 @@ conf/local/**
 # ignore potentially sensitive credentials files
 conf/**/*credentials*
 
-# ignore everything in the following folders
+# =========================
+# DATA MANAGEMENT (KEDRO)
+# =========================
+
+# ignore all data by default
 data/**
 
-# except their sub-folders
+# keep directory structure
 !data/**/
 
-# also keep all .gitkeep files
+# keep .gitkeep files
 !.gitkeep
 
-# ignore kedro-viz metadata
+# 🔓 ALLOW TRAINED MODELS ONLY
+!data/06_models/
+!data/06_models/**
+
+# =========================
+# MODELS DIRECTORY (CUSTOM)
+# =========================
+!models/
+!models/**
+
+# =========================
+# Kedro Viz
+# =========================
 .viz
 
-# ignore file based logs
+# =========================
+# Logs
+# =========================
 *.log
 
 ##########################
@@ -57,8 +75,7 @@ atlassian-ide-plugin.xml
 # C extensions
 *.so
 
-### Python template
-# Byte-compiled / optimized / DLL files
+### Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -83,8 +100,6 @@ wheels/
 MANIFEST
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -92,7 +107,7 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Unit test / coverage
 htmlcov/
 .tox/
 .coverage
@@ -103,44 +118,8 @@ coverage.xml
 *.cover
 .hypothesis/
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-.static_storage/
-.media/
-local_settings.py
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
+# Jupyter
 .ipynb_checkpoints
-
-# IPython
-.ipython/profile_default/history.sqlite
-.ipython/profile_default/startup/README
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
 
 # Environments
 .env
@@ -156,9 +135,6 @@ venv.bak/
 venv/
 venv*/
 .env
-
-# mkdocs documentation
-/site
 
 # mypy
 .mypy_cache/
